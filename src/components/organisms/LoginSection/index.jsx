@@ -1,10 +1,10 @@
-import googleIcon from "../../../assets/google-icon.png";
 import eye from "../../../assets/eye.png";
 import at from "../../../assets/at.png";
 import logo from "../../../assets/madm-logo.png";
 import "../../../App.css";
+import Button from "../../atoms/Button";
 
-function App() {
+function LoginSection() {
     return (
       <>
         <section className="login">
@@ -28,15 +28,9 @@ function App() {
             </label>
           </div>
   
-          <div className="wrapper">
-            <button type="button" className="login_button" disabled>
-              Entrar
-            </button>
+            <Button variant="primary" text="Entrar" />
 
-            <button type="button" className="login_google_button" disabled>
-            <img src={googleIcon} alt="eye" className="google-icon" />
-              Entrar com Google
-            </button>
+            <Button variant="secondary" text="Entrar com Google" />
   
             <a href="#" className="login_link">
               Esqueci minha senha
@@ -44,10 +38,9 @@ function App() {
             <a href="/register" className="login_link">
               Criar conta
             </a>
-          </div>
         </section>
       </>
     );
   }
   
-  export default App;
+  export default LoginSection;

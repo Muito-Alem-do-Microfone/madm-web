@@ -1,6 +1,6 @@
-import googleIcon from "../../../assets/google-icon.png";
 import logo from "../../../assets/madm-logo.png";
 import "../../../App.css";
+import Button from "../../atoms/Button";
 
 function RegisterSection() {
     return (
@@ -33,14 +33,10 @@ function RegisterSection() {
           </div>
   
           <div className="wrapper">
-            <button type="button" className="login_button" disabled>
-              Entrar
-            </button>
 
-            <button type="button" className="login_google_button" disabled>
-            <img src={googleIcon} alt="eye" className="google-icon" />
-              Entrar com Google
-            </button>
+          <Button variant="primary" text="Entrar" />
+
+          <Button variant="secondary" text="Entrar com Google" />
   
             <a href="/login" className="login_link">
               Já tenho uma conta
