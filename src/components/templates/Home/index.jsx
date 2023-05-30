@@ -7,6 +7,10 @@ function Login() {
       <div>
         <Header />
         <Carousel />
+        <p>10.000</p>
+        <p>músicos por aqui</p>
+        <p>2.000</p>
+        <p>só no seu estado</p>
       </div>
   );
 }

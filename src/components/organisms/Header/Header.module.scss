@@ -1,12 +1,28 @@
 .headerSection {
     padding: 0;
     margin: 0;
-    height: 15vh;
     background-color: #1F1F1F;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 17vh;
+}
+
+.socialsLoginSection {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    margin-right: 7vh;
+}
+
+.registerSearchSection {
+    display: flex;
+}
+
+.registerSearchSection p {
+    font-size: 1.5em;
 }
 
 .instagram {
@@ -17,21 +33,14 @@
 .facebook {
     width: 42px;
     height: 42px;
+    margin-left: 5vh;
+    margin-right: 7vh;
 }
 
 .logo {
     height: 6vh;
-}
+    margin-left: 7vh;
 
-.socialsLoginSection {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-}
-
-.registerSearchSection {
-    display: flex;
-    flex-direction: row;
 }
 
 .register {

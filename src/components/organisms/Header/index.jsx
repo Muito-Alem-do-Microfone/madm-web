@@ -6,6 +6,7 @@ import Button from "../../atoms/Button";
 import styles from "./Header.module.scss";
 
 function Header() {
+  
   return (
     <>
       <section className={styles.headerSection}>
@@ -16,12 +17,12 @@ function Header() {
             <p className={styles.search}>Encontrar músico</p>
         </div>
 
-        <div className={styles.SocialsLoginSection}>
+        <div className={styles.socialsLoginSection}>
           <img src={instagram} alt="instagram" className={styles.instagram} />
           <img src={facebook} alt="facebook" className={styles.facebook} />
           <Button variant="primary" text="Fazer login" />
         </div>
-
+        
       </section>
     </>
   );
