@@ -1,5 +1,8 @@
 import Header from "../../../components/organisms/Header";
 import Carousel from "../../organisms/Carousel";
+import CardSection1 from "../../organisms/CardSection1"
+import CardSection2 from "../../organisms/CardSection2"
+import Footer from "../../organisms/Footer";
 
 
 function Login() {
@@ -7,10 +10,9 @@ function Login() {
       <div>
         <Header />
         <Carousel />
-        <p>10.000</p>
-        <p>músicos por aqui</p>
-        <p>2.000</p>
-        <p>só no seu estado</p>
+        <CardSection1 />
+        <CardSection2 />
+        <Footer />
       </div>
   );
 }

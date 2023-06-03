@@ -14,7 +14,9 @@ function Header() {
 
         <div className={styles.registerSearchSection}>
             <p className={styles.register}>Fazer cadastro</p>
-            <p className={styles.search}>Encontrar músico</p>
+            <p className={styles.register}>Encontrar músico</p>
+            <p className={styles.register}>Anunciar</p>
+            <p className={styles.register}>Mural de bandas</p>
         </div>
 
         <div className={styles.socialsLoginSection}>
