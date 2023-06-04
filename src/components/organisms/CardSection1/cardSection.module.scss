@@ -1,0 +1,22 @@
+.cardSection {
+    display: flex;
+    flex-direction: row;
+    // background-color: purple;
+    justify-content: space-around;
+    height: 20vh;
+    align-items: center;
+}
+
+.cardTitle {
+    // background-color: red;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.cardTitle p {
+    font-size: 50px;
+}

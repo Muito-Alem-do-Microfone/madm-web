@@ -1,11 +1,12 @@
 import UserCard from "../../molecules/UserCard"
+import styles from "../CardSection1/cardSection.module.scss";
 
 function CardSection2() {
     return (
         <>
             <section>
 
-                <div>
+                <div className={styles.cardTitle}>
                     <p>Quem já está querendo formar banda perto de você?</p>
                 </div>
 
