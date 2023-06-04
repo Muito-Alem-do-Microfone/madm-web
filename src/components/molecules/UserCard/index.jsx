@@ -13,7 +13,9 @@ function UserCard() {
         <p className={styles.userInfo}>Guitarrista de São Paulo - SP </p>
         <p className={styles.userInfo}>Curte trap, hardcore e Costa Gold</p>
       </div>
-      <Button variant="primary" text="Conectar" />
+      <div className={styles.btnSection}>
+        <Button variant="primary" text="Conectar" />
+      </div>
     </div>
   );
 }

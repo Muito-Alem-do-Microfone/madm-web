@@ -6,7 +6,7 @@ function CardSection2() {
     <>
       <section>
         <div className={styles.cardTitle}>
-          <p>Quem já está querendo formar banda perto de você?</p>
+          <p>Quem já está querendo formar banda perto de você</p>
         </div>
 
         <div className={styles.userCardSection}>

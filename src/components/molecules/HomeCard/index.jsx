@@ -8,9 +8,11 @@ function HomeCard() {
                 <h1>Estar na cena</h1>
             </div>
             <div className={styles.cardContent}>
-                <p>Faça seu cadastro e seja um(a) músico(a) que pode ser encontrado por outros músicos do mundo inteiro.</p>
+                <p className={styles.cardContentText}>Faça seu cadastro e seja um(a) músico(a) que pode ser encontrado por outros músicos do mundo inteiro.</p>
             </div>
-            <Button variant="primary" text="Cadastrar" />
+            <div className={styles.btnSection}>
+                <Button variant="primary" text="Cadastrar" />
+            </div>
         </div>
     );
   }

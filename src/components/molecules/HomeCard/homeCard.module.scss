@@ -18,5 +18,16 @@
 .cardContent {
     display: flex;
     align-items: center;
+    justify-content: center;
     // background-color: red;
+}
+
+.cardContentText {
+    display: flex;
+    justify-content: center;
+}
+
+.btnSection {
+    width: 25vh;
+    margin-top: 3vh;
 }
