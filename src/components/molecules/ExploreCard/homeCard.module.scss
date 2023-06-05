@@ -17,17 +17,27 @@
 
 .cardContent {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    // background-color: red;
+    text-align: center;
 }
 
 .cardContentText {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    // align-items: center;
 }
 
 .btnSection {
     width: 25vh;
     margin-top: 3vh;
+}
+
+.titleCardSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleImg {
+    width: 7vh;
+    margin-bottom: 3vh;
 }

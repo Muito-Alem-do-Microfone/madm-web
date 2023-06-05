@@ -1,8 +1,8 @@
 import Header from "../../../components/organisms/Header";
 import Carousel from "../../organisms/Carousel";
-import CardSection1 from "../../organisms/CardSection1"
-import CardSection2 from "../../organisms/CardSection2"
-import Footer from "../../organisms/Footer";
+import ExploreSection from "../../organisms/ExploreSection"
+import UsersSection from "../../organisms/UsersSection"
+import AboutSection from "../../organisms/AboutSection";
 
 
 function Login() {
@@ -10,9 +10,9 @@ function Login() {
       <div>
         <Header />
         <Carousel />
-        <CardSection1 />
-        <CardSection2 />
-        <Footer />
+        <ExploreSection />
+        <UsersSection />
+        <AboutSection />
       </div>
   );
 }

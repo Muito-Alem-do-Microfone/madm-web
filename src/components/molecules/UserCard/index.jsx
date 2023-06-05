@@ -11,7 +11,7 @@ function UserCard() {
       <div className={styles.profileContent}>
         <h2>Erick Santos</h2>
         <p className={styles.userInfo}>Guitarrista de São Paulo - SP </p>
-        <p className={styles.userInfo}>Curte trap, hardcore e Costa Gold</p>
+        <p className={styles.userInfo}>Curte trap e hardcore</p>
       </div>
       <div className={styles.btnSection}>
         <Button variant="primary" text="Conectar" />
