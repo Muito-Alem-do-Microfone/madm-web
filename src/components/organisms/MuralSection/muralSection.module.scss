@@ -1,0 +1,23 @@
+    main {
+        display: flex;
+    }
+
+    .login {
+        display: flex;
+        background-color: #1F1F1F;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 500px;
+        min-height: 100vh;
+        padding: clamp(35px, 8%, 70px);
+    }
+
+    .wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }

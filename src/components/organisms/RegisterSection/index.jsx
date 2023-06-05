@@ -1,44 +1,47 @@
 import logo from "../../../assets/madm-logo.png";
-import "../../../App.css";
+// import "../../../App.css";
+import styles from './registerSection.module.scss';
 import Button from "../../atoms/Button";
 
 function RegisterSection() {
     return (
       <>
-        <section className="login">
-          <div className="wrapper">
-            <img src={logo} alt="logo" className="logo" />
-            <h1 className="login_title">Registro</h1>
+        <section className={styles.login}>
+          <div className={styles.wrapper}>
+            <img src={logo} alt="logo" className={styles.logo} />
+            <h1 className={styles.login_title}>Registro</h1>
   
-            <label className="login_label">
-              <input type="text" name="name" className="input" placeholder="Nome"/>
+            <label className={styles.login_label}>
+              <input type="text" name="name" className={styles.input} placeholder="Nome"/>
             </label>
   
-            <label className="login_label">
-              <input type="email" name="email" className="input" placeholder="E-mail" />
+            <label className={styles.login_label}>
+              <input type="email" name="email" className={styles.input} placeholder="E-mail" />
             </label>
 
-            <label className="login_label">
-              <input type="password" name="password" className="input" placeholder="Senha" />
+            <label className={styles.login_label}>
+              <input type="password" name="password" className={styles.input} placeholder="Senha" />
             </label>
 
-            <label className="login_label">
-              <input type="password" name="password" className="input" placeholder="Confirme sua senha" />
+            <label className={styles.login_label}>
+              <input type="password" name="password" className={styles.input} placeholder="Confirme sua senha" />
             </label>
   
-            <label className="login_label--checkbox">
-              <input type="checkbox" className="input--checkbox" />
+            <label className={styles.login_label_checkbox}>
+              <input type="checkbox" className={styles.input_checkbox} />
               Manter login
             </label>
           </div>
   
-          <div className="wrapper">
+          <div className={styles.wrapper}>
 
-          <Button variant="primary" text="Entrar" />
-
-          <Button variant="secondary" text="Entrar com Google" />
-  
-            <a href="/login" className="login_link">
+          <div className={styles.btnSection}>
+            <Button variant="primary" text="Entrar" />
+          </div>
+          <div className={styles.btnSection}>
+            <Button variant="secondary" text="Entrar com Google" />
+          </div>
+            <a href="/login" className={styles.login_link}>
               Já tenho uma conta
             </a>
           </div>

@@ -1,11 +1,11 @@
 import wallpaper from "../../../assets/wallpaper.jpg";
-import "../../../App.css";
+import styles from './register.module.scss'
 import RegisterSection from "../../../components/organisms/RegisterSection";
 
 
 function Register() {
   return (
-      <div className="wallpaper" style={{ backgroundImage: `url(${wallpaper})` }}>
+      <div className={styles.wallpaper} style={{ backgroundImage: `url(${wallpaper})` }}>
         <RegisterSection />
       </div>
   );
