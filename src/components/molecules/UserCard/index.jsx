@@ -1,5 +1,5 @@
 import styles from "./userCard.module.scss";
-import profileImg from "../../../assets/profileImg.jpg";
+import profileImg from "../../../assets/profile-img.jpg";
 import Button from "../../atoms/Button";
 
 function UserCard() {

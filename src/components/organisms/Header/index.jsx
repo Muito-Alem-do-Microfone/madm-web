@@ -1,6 +1,6 @@
 import logo from "../../../assets/madm-logo.png";
-import instagram from "../../../assets/instagram-branco.png";
-import facebook from "../../../assets/facebook-branco.png";
+import instagram from "../../../assets/instagram-white.png";
+import facebook from "../../../assets/facebook-white.png";
 import Button from "../../atoms/Button";
 
 import styles from "./Header.module.scss";
