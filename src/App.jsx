@@ -1,4 +1,3 @@
-// import "./App.css";
 import Login from "./components/templates/Login";
 import Home from "./components/templates/Home";
 import Register from "./components/templates/Register";
@@ -13,6 +12,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/mural' element={<Mural/>}/>
+      <Route path='/search' element={<Search/>}/>
     </Routes>
   );
 }
