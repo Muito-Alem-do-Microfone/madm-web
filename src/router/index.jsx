@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import Login from "../components/templates/Login"
-import Home from "../components/templates/Home"
-import Register from "../components/templates/Register"
-import Mural from "../components/templates/Mural"
+import Login from "../components/screens/Login"
+import Home from "../components/screens/Home"
+import Register from "../components/screens/Register"
+import Mural from "../components/screens/Mural"
 import SearchPage from "../components/screens/SearchPage"
 
 const router = createBrowserRouter([

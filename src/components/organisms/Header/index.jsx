@@ -1,11 +1,17 @@
-import logo from "../../../assets/madm-logo.png";
-import instagram from "../../../assets/instagram-white.png";
-import facebook from "../../../assets/facebook-white.png";
-import Button from "../../atoms/Button";
+import logo from "../../../assets/madm-logo.png"
+import instagram from "../../../assets/instagram-white.png"
+import facebook from "../../../assets/facebook-white.png"
+import Button from "../../atoms/Button"
 
-import styles from "./Header.module.scss";
+import styles from "./Header.module.scss"
+import { useNavigate } from "react-router-dom"
 
 function Header() {
+  const navigate = useNavigate()
+
+  const handleLoginClick = () => {
+    navigate('/login')
+  }
   
   return (
     <>
@@ -22,7 +28,7 @@ function Header() {
         <div className={styles.socialsLoginSection}>
           <img src={instagram} alt="instagram" className={styles.instagram} />
           <img src={facebook} alt="facebook" className={styles.facebook} />
-          <Button variant="primary" text="Fazer login" />
+          <Button onClick={handleLoginClick} variant="primary" text="Fazer login" />
         </div>
         
       </section>

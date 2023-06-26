@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
-import AnnouncementCard from "../../announcementCard"
-import AnnouncementPoint from "../../announcementPoint"
+import AnnouncementCard from "../../molecules/AnnouncementCard"
+import AnnouncementPoint from "../AnnouncementPoint"
 
 const MapPoint = (props) => {
   const [opened, setIsOpened] = useState(false)

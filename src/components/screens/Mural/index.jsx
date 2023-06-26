@@ -1,5 +1,5 @@
-import Header from "../../../components/organisms/Header";
-import MuralSection from "../../../components/organisms/MuralSection";
+import Header from "../../organisms/Header";
+import MuralSection from "../../organisms/MuralSection";
 
 
 function Login() {

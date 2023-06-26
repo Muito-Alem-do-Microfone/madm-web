@@ -1,4 +1,4 @@
-import Header from "../../../components/organisms/Header";
+import Header from "../../organisms/Header";
 import Carousel from "../../organisms/Carousel";
 import ExploreSection from "../../organisms/ExploreSection"
 import UsersSection from "../../organisms/UsersSection"

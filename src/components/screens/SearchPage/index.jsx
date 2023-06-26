@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Wrapper, Status } from "@googlemaps/react-wrapper"
-import Map from '../../molecules/Map/map'
+import Map from '../../molecules/Map'
 import Select from 'react-select'
 
 import {Genres} from '../../../dummyData/genres.json'
