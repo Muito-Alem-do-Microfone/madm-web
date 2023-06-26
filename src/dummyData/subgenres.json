@@ -1,0 +1,339 @@
+{
+  "DefaultSubgenres": [
+    {
+      "id": 1,
+      "name": "Arrocha",
+      "genre_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Arrochadeira",
+      "genre_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Black Music",
+      "genre_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Blues",
+      "genre_id": 1
+    },
+    {
+      "id": 5,
+      "name": "Brega Funk",
+      "genre_id": 1
+    },
+    {
+      "id": 6,
+      "name": "Bregadeira",
+      "genre_id": 1
+    },
+    {
+      "id": 7,
+      "name": "Funk",
+      "genre_id": 1
+    },
+    {
+      "id": 8,
+      "name": "HipHop",
+      "genre_id": 1
+    },
+    {
+      "id": 9,
+      "name": "Rap",
+      "genre_id": 1
+    },
+    {
+      "id": 10,
+      "name": "Jazz",
+      "genre_id": 1
+    },
+    {
+      "id": 11,
+      "name": "Jingles/Spots",
+      "genre_id": 1
+    },
+    {
+      "id": 12,
+      "name": "Pagodão Baiano",
+      "genre_id": 1
+    },
+    {
+      "id": 13,
+      "name": "Piseiro",
+      "genre_id": 1
+    },
+    {
+      "id": 14,
+      "name": "R&B",
+      "genre_id": 1
+    },
+    {
+      "id": 15,
+      "name": "Reggae",
+      "genre_id": 1
+    },
+    {
+      "id": 16,
+      "name": "Reggaeton",
+      "genre_id": 1
+    },
+    {
+      "id": 17,
+      "name": "Soul",
+      "genre_id": 1
+    },
+    {
+      "id": 18,
+      "name": "Swingueira",
+      "genre_id": 1
+    },
+    {
+      "id": 19,
+      "name": "Tecnobrega",
+      "genre_id": 1
+    },
+    {
+      "id": 20,
+      "name": "Trap",
+      "genre_id": 1
+    },
+    {
+      "id": 21,
+      "name": "Axé",
+      "genre_id": 2
+    },
+    {
+      "id": 22,
+      "name": "Bossa Nova",
+      "genre_id": 2
+    },
+    {
+      "id": 23,
+      "name": "Brega",
+      "genre_id": 2
+    },
+    {
+      "id": 24,
+      "name": "Choro",
+      "genre_id": 2
+    },
+    {
+      "id": 25,
+      "name": "Forró",
+      "genre_id": 2
+    },
+    {
+      "id": 26,
+      "name": "Instrumental Brasileiro",
+      "genre_id": 2
+    },
+    {
+      "id": 27,
+      "name": "MPB",
+      "genre_id": 2
+    },
+    {
+      "id": 28,
+      "name": "Pagode",
+      "genre_id": 2
+    },
+    {
+      "id": 29,
+      "name": "Regional",
+      "genre_id": 2
+    },
+    {
+      "id": 30,
+      "name": "Romântico",
+      "genre_id": 2
+    },
+    {
+      "id": 31,
+      "name": "Samba",
+      "genre_id": 2
+    },
+    {
+      "id": 32,
+      "name": "Samba Rock",
+      "genre_id": 2
+    },
+    {
+      "id": 33,
+      "name": "Sertaneijo",
+      "genre_id": 2
+    },
+    {
+      "id": 34,
+      "name": "Eletrônica",
+      "genre_id": 3
+    },
+    {
+      "id": 35,
+      "name": "House",
+      "genre_id": 3
+    },
+    {
+      "id": 36,
+      "name": "Trance",
+      "genre_id": 3
+    },
+    {
+      "id": 37,
+      "name": "Católica",
+      "genre_id": 4
+    },
+    {
+      "id": 38,
+      "name": "Religiosa",
+      "genre_id": 4
+    },
+    {
+      "id": 39,
+      "name": "Country",
+      "genre_id": 5
+    },
+    {
+      "id": 40,
+      "name": "Erudito",
+      "genre_id": 5
+    },
+    {
+      "id": 41,
+      "name": "Experimental",
+      "genre_id": 5
+    },
+    {
+      "id": 42,
+      "name": "Folk",
+      "genre_id": 5
+    },
+    {
+      "id": 43,
+      "name": "Infantil",
+      "genre_id": 5
+    },
+    {
+      "id": 44,
+      "name": "Instrumental",
+      "genre_id": 5
+    },
+    {
+      "id": 45,
+      "name": "New Age",
+      "genre_id": 5
+    },
+    {
+      "id": 46,
+      "name": "Paródia/Comédia",
+      "genre_id": 5
+    },
+    {
+      "id": 47,
+      "name": "World Music",
+      "genre_id": 5
+    },
+    {
+      "id": 48,
+      "name": "Alternativo",
+      "genre_id": 6
+    },
+    {
+      "id": 49,
+      "name": "Death Metal",
+      "genre_id": 6
+    },
+    {
+      "id": 50,
+      "name": "Emocore",
+      "genre_id": 6
+    },
+    {
+      "id": 51,
+      "name": "Gótico",
+      "genre_id": 6
+    },
+    {
+      "id": 52,
+      "name": "Grunge",
+      "genre_id": 6
+    },
+    {
+      "id": 53,
+      "name": "Guitar",
+      "genre_id": 6
+    },
+    {
+      "id": 54,
+      "name": "Hard Rock",
+      "genre_id": 6
+    },
+    {
+      "id": 55,
+      "name": "Hardcore",
+      "genre_id": 6
+    },
+    {
+      "id": 56,
+      "name": "Heavy Metal",
+      "genre_id": 6
+    },
+    {
+      "id": 57,
+      "name": "Indie",
+      "genre_id": 6
+    },
+    {
+      "id": 58,
+      "name": "Industrial",
+      "genre_id": 6
+    },
+    {
+      "id": 59,
+      "name": "Metalcore",
+      "genre_id": 6
+    },
+    {
+      "id": 60,
+      "name": "Metal Melódico",
+      "genre_id": 6
+    },
+    {
+      "id": 61,
+      "name": "New Metal",
+      "genre_id": 6
+    },
+    {
+      "id": 62,
+      "name": "Pop",
+      "genre_id": 6
+    },
+    {
+      "id": 63,
+      "name": "Pop Rock",
+      "genre_id": 6
+    },
+    {
+      "id": 64,
+      "name": "Punk Rock",
+      "genre_id": 6
+    },
+    {
+      "id": 65,
+      "name": "Rock Progressivo",
+      "genre_id": 6
+    },
+    {
+      "id": 66,
+      "name": "Surf Music",
+      "genre_id": 6
+    },
+    {
+      "id": 67,
+      "name": "Trash Metal",
+      "genre_id": 6
+    }
+  ]
+}

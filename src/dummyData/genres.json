@@ -1,0 +1,28 @@
+{
+  "Genres": [
+    {
+      "id": 1,
+      "name": "Black"
+    },
+    {
+      "id": 2,
+      "name": "Brasil"
+    },
+    {
+      "id": 3,
+      "name": "Eletrônico"
+    },
+    {
+      "id": 4,
+      "name": "Gospel/Religiosa"
+    },
+    {
+      "id": 5,
+      "name": "Outros"
+    },
+    {
+      "id": 6,
+      "name": "Rock/Pop"
+    }
+  ]
+}
