@@ -18,19 +18,20 @@ function Header() {
       <section className={styles.headerSection}>
         <img src={logo} alt="logo" className={styles.logo} />
 
-        <div className={styles.registerSearchSection}>
-            <p className={styles.register}>Fazer cadastro</p>
-            <p className={styles.register}>Encontrar músico</p>
-            <p className={styles.register}>Anunciar</p>
-            <p className={styles.register}>Mural de bandas</p>
+        <div className={styles.menuWrapper}>
+            <p className={styles.menuItem}>Fazer cadastro</p>
+            <p className={styles.menuItem}>Encontrar músico</p>
+            <p className={styles.menuItem}>Anunciar</p>
+            <p className={styles.menuItem}>Mural de bandas</p>
         </div>
 
-        <div className={styles.socialsLoginSection}>
-          <img src={instagram} alt="instagram" className={styles.instagram} />
-          <img src={facebook} alt="facebook" className={styles.facebook} />
+        <div className={styles.buttonsWrapper}>
+          <div className={styles.socialsWrapper}>
+            <img src={instagram} alt="instagram" className={styles.socials} />
+            <img src={facebook} alt="facebook" className={styles.socials} />
+          </div>
           <Button onClick={handleLoginClick} variant="primary" text="Fazer login" />
-        </div>
-        
+        </div>        
       </section>
     </>
   );

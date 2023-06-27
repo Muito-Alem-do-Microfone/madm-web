@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from '../../organisms/Header'
 
 const ProfileScreen = () => {
 
   return (
-    <div>PROFILE</div>
+    <Header />
   )
 }
 
