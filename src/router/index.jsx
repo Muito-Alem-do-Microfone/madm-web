@@ -5,6 +5,7 @@ import Home from "../components/screens/Home"
 import Register from "../components/screens/Register"
 import Mural from "../components/screens/Mural"
 import SearchPage from "../components/screens/SearchPage"
+import ProfileScreen from '../components/screens/Profile'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: '/search',
     element: <SearchPage />,
+  },
+  {
+    path: '/profile',
+    element: <ProfileScreen />,
   },
 ])
 

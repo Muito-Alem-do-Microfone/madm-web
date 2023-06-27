@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import eye from "../../../assets/eye.png";
 import at from "../../../assets/at.png";
 import logo from "../../../assets/madm-logo.png";
@@ -6,8 +6,9 @@ import styles from './loginSection.module.scss';
 import Button from "../../atoms/Button";
 
 import { loginUser } from '../../../state/reducers/auth/slice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { isTokenValid } from '../../../utils';
 
 
 const LoginSection = () => {
@@ -16,9 +17,22 @@ const LoginSection = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
+  const token = useSelector(state => state.auth.token) 
+
+  useEffect(() => {
+    if (token !== '') {
+      try {
+        isTokenValid(token)
+        navigate('/profile')
+      } catch (error) {
+        return
+      }
+    }
+  }, [token])
+
   const handleLogin = () => {
     dispatch(loginUser(user, password))
-    navigate('/search')
+    navigate('/profile')
   }
 
   return (
