@@ -1,6 +1,6 @@
 import wallpaper from "../../../assets/wallpaper.jpg";
 import styles from './login.module.scss'
-import LoginSection from "../../../components/organisms/LoginSection";
+import LoginSection from "../../organisms/LoginSection";
 
 
 function Login() {

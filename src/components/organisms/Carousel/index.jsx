@@ -2,7 +2,7 @@ import Button from "../../atoms/Button";
 import wallpaper from "../../../assets/wallpaper.jpg";
 
 
-import styles from "./carousel.module.scss";
+import styles from "./Carousel.module.scss";
 
 function Carousel() {
   return (

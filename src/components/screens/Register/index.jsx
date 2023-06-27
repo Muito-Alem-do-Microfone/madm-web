@@ -1,6 +1,6 @@
 import wallpaper from "../../../assets/wallpaper.jpg";
 import styles from './register.module.scss'
-import RegisterSection from "../../../components/organisms/RegisterSection";
+import RegisterSection from "../../organisms/RegisterSection";
 
 
 function Register() {
