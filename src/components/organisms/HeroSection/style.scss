@@ -1,0 +1,44 @@
+@use '../../../../variables';
+
+.hero {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -200px;
+  background-image: url('../../../assets/bg.png');
+  padding: 0 36px;
+  &__title {
+    color: #FFF;
+    font-size: variables.$big-title;
+    text-align: center;
+  }
+  &__text {
+    color: #FFF;
+    font-size: variables.$medium-text;
+    text-align: center;
+  }
+  &__buttons {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 75vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 0px;
+  }  
+}
+
+@media screen and (max-width: 425px) {
+  .hero {
+    background-position-x: -100px;
+  }
+}

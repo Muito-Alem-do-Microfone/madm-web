@@ -1,39 +1,53 @@
+@use '../../../../variables';
+
 .button {
+  padding: 10px 20px;
+  transition: ease-in-out 0.2s;
+  border: none;
+  font-size: variables.$medium-text;
+  &:hover {
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+  }
+  &--fullWidth {
     width: 100%;
-    height: 60px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: ease-in-out 0.4s;
-    &.primary{
-        background-color: #D3485D;
-        color: white;
-        border: none;
-            &:hover {
-                cursor: pointer;
-                background-color: #9E3A4B;
-                transition: ease-in-out 0.4s;
-            }
-        }
-    &.secondary{
-        background-color: transparent;
-        color: white;
-        border: 1px solid white;
-            &:hover {
-                cursor: pointer;
-                background-color: #9E3A4B;
-                transition: ease-in-out 0.4s;
-            }
-        }
-    &.tertiary{
-            background-color: white;
-            color: #9E3A4B;
-            width: 40vh;
-            height: 8vh;
-            border-radius: 25vh;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
+  }
+  &--primary{
+    background-color: #D3485D;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: #9E3A4B;
     }
+  }
+  &--secondary{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    &:hover {
+      background-color: white;
+      color: #9E3A4B;
+      font-weight: 700;
+    }
+  }
+  &--tertiary{
+    background-color: white;
+    color: #9E3A4B;
+    border-radius: 100px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &--profileButton {
+    background-color: #1F1F1F;
+    color: #FFF;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &:hover {
+      cursor: pointer;
+      background-color: #9E3A4B;
+      transition: ease-in-out 0.2s;
+    }
+  }
+}

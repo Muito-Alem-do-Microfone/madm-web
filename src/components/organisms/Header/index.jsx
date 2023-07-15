@@ -1,10 +1,11 @@
-import logo from "../../../assets/madm-logo.png"
-import instagram from "../../../assets/instagram-white.png"
-import facebook from "../../../assets/facebook-white.png"
-import Button from "../../atoms/Button"
+import logo from '../../../assets/madm-logo.png'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import Button from '../../atoms/Button'
+import { useNavigate } from 'react-router-dom'
 
-import styles from "./Header.module.scss"
-import { useNavigate } from "react-router-dom"
+import './style.scss'
 
 function Header() {
   const navigate = useNavigate()
@@ -14,26 +15,34 @@ function Header() {
   }
   
   return (
-    <>
-      <section className={styles.headerSection}>
-        <img src={logo} alt="logo" className={styles.logo} />
-
-        <div className={styles.registerSearchSection}>
-            <p className={styles.register}>Fazer cadastro</p>
-            <p className={styles.register}>Encontrar músico</p>
-            <p className={styles.register}>Anunciar</p>
-            <p className={styles.register}>Mural de bandas</p>
-        </div>
-
-        <div className={styles.socialsLoginSection}>
-          <img src={instagram} alt="instagram" className={styles.instagram} />
-          <img src={facebook} alt="facebook" className={styles.facebook} />
-          <Button onClick={handleLoginClick} variant="primary" text="Fazer login" />
-        </div>
-        
-      </section>
-    </>
-  );
+    <Navbar variant='dark' expand="lg" className="header">
+      <Container>
+        <Navbar.Brand href="#home">
+          <img src={logo} alt='logo' className="header__logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" data-bs-target="#basic-navbar-nav" />
+        <Navbar.Collapse className='header__dropdown' id="basic-navbar-nav">
+          <Nav className="header__menu m-auto">
+            <Nav.Link
+              className="header__menuItem"
+              href="#home">Fazer cadastro</Nav.Link>
+            <Nav.Link
+              className="header__menuItem"
+              href="#link">Encontrar músico</Nav.Link>
+            <Nav.Link
+              className="header__menuItem"
+              href="#link">Anunciar</Nav.Link>
+            <Nav.Link
+              className="header__menuItem"
+              href="#link">Mural de bandas</Nav.Link>
+          </Nav>
+          <div className="header__rightContainer">
+            <Button onClick={handleLoginClick} variant='primary' text='Fazer login' />
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
 }
 
-export default Header;
+export default Header

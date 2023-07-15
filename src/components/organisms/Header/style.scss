@@ -1,0 +1,48 @@
+@use '../../../../variables';
+
+.header {
+  $self: &;
+  background-color: #1F1F1F;
+  color: white;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    height: 35px;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    #{ $self }__menuItem {
+      font-size: variables.$medium-text;
+      transition: ease-in-out 0.2s;
+      color: #FFF;
+      &:hover {
+        cursor: pointer;
+        color: #D3485D;
+        transition: ease-in-out 0.2s;
+      }
+    } 
+  }
+
+  &__rightContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__dropdown {
+      display: flex;
+      padding: 20px;
+      gap: 50px;
+    }
+  }
+}

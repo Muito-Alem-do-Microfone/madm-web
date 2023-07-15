@@ -1,0 +1,46 @@
+.custom-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel__card {
+    flex: 0 0 calc(100% / 3);
+    padding: 10px;
+  }
+
+  .prev-button,
+  .next-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .next-button {
+    margin-left: 10px;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-carousel {
+    .carousel__card {
+      flex: 0 0 50%;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.imageContainer {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: absolute;
+}
+
+.coverImg {
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.profileContainer {
+  display: flex;
+  padding-bottom: 150px;
+}
+
+.leftContainer {
+  position: relative;
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 35%;
+}
+
+.floatingContainer {
+  position: absolute;
+  top: -150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileImg {
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.statsWrapper {
+  background-color: #1F1F1F;
+  color: #FFF;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  span {
+    text-align: center;
+    font-size: 14px;
+    strong {
+      font-size: 20px;
+    }
+  }
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 60%;
+}
+
+.firstContainer {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profileUpperWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.profileName {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.profileSocialsWrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.profileSocials {
+  height: 35px;
+  width: 35px;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+  }
+}
+
+.profileLocation {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  span {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.groupsContainer {
+  display: flex;
+  gap: 35px;
+}
+
+.groupWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  img {
+    height: 50px;
+    width: 50px;
+  }
+  span {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.bioContainer {
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    width: 50%;
+  }
+}
+
+.instrument {
+  span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.announcementContainer {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.announcement {
+  padding: 10px 25px;
+  border: 1px solid #1F1F1F;
+  span {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
