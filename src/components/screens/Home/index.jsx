@@ -1,11 +1,10 @@
-import Header from "../../organisms/Header";
-import Carousel from "../../organisms/Carousel";
+import Header from "../../organisms/Header"
+import Carousel from "../../organisms/Carousel"
 import ExploreSection from "../../organisms/ExploreSection"
 import UsersSection from "../../organisms/UsersSection"
-import AboutSection from "../../organisms/AboutSection";
+import AboutSection from "../../organisms/AboutSection"
 
-
-function Login() {
+const Home = () => {
   return (
       <div>
         <Header />
@@ -14,7 +13,7 @@ function Login() {
         <UsersSection />
         <AboutSection />
       </div>
-  );
+  )
 }
 
-export default Login;
+export default Home

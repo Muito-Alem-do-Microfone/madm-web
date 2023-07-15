@@ -1,0 +1,48 @@
+.header {
+  $self: &;
+  background-color: #1F1F1F;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  &__logo {
+    height: 35px;
+  }
+
+  &__menu {
+    display: flex;
+    max-width: 50%;
+    gap: 30px;
+    #{ $self }__menuItem {
+      font-size: 0.9em;
+      transition: ease-in-out 0.2s;
+      &:hover {
+        cursor: pointer;
+        color: #D3485D;
+        transition: ease-in-out 0.2s;
+      }
+    } 
+  }
+
+  &__rightContainer {
+    display: flex;
+    gap: 20px;
+    #{ $self }__socialsWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      #{ $self }__socials {
+        width: 30px;
+        height: 30px;
+        transition: ease-in-out 0.2s;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.2);
+          transition: ease-in-out 0.2s;
+        }
+      }
+    }
+  }
+}

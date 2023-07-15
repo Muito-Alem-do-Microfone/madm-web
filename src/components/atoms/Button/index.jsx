@@ -5,6 +5,7 @@ const variantStyles = {
   primary: styles.primary,
   secondary: styles.secondary,
   tertiary: styles.tertiary,
+  profile: styles.profileButton
 };
 
 export default function Button({ variant, text, onClick }) {
@@ -19,6 +20,6 @@ export default function Button({ variant, text, onClick }) {
 
 Button.propTypes = {
   variant: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 }

@@ -1,6 +1,11 @@
 .button {
   padding: 10px 20px;
-  transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.2s;
+  border: none;
+  &:hover {
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+  }
   &.fullWidth {
     width: 100%;
   }
@@ -9,9 +14,7 @@
     color: white;
     border: none;
     &:hover {
-      cursor: pointer;
       background-color: #9E3A4B;
-      transition: ease-in-out 0.4s;
     }
   }
   &.secondary{
@@ -19,11 +22,9 @@
     color: white;
     border: 1px solid white;
     &:hover {
-      cursor: pointer;
       background-color: white;
       color: #9E3A4B;
       font-weight: 700;
-      transition: ease-in-out 0.4s;
     }
   }
   &.tertiary{
@@ -32,6 +33,19 @@
     border-radius: 100px;
     &:hover {
       cursor: pointer;
+    }
+  }
+  &.profileButton {
+    background-color: #1F1F1F;
+    color: #FFF;
+    font-size: 16px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    &:hover {
+      cursor: pointer;
+      background-color: #9E3A4B;
+      transition: ease-in-out 0.2s;
     }
   }
 }
