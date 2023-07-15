@@ -35,11 +35,14 @@
     display: flex;
     justify-content: center;
   }
+}
 
-  &__dropdown {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 50px;
+@media screen and (max-width: 768px) {
+  .header {
+    &__dropdown {
+      display: flex;
+      padding: 20px;
+      gap: 50px;
+    }
   }
 }

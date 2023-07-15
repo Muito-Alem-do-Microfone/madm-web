@@ -17,7 +17,7 @@ function Header() {
   }
   
   return (
-    <Navbar variant='dark' expand="sm" className="header">
+    <Navbar variant='dark' expand="lg" className="header">
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} alt='logo' className="header__logo" />
