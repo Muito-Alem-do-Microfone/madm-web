@@ -1,15 +1,18 @@
+@use '../../../../variables';
+
 .button {
   padding: 10px 20px;
   transition: ease-in-out 0.2s;
   border: none;
+  font-size: variables.$medium-text;
   &:hover {
     cursor: pointer;
     transition: ease-in-out 0.2s;
   }
-  &.fullWidth {
+  &--fullWidth {
     width: 100%;
   }
-  &.primary{
+  &--primary{
     background-color: #D3485D;
     color: white;
     border: none;
@@ -17,7 +20,7 @@
       background-color: #9E3A4B;
     }
   }
-  &.secondary{
+  &--secondary{
     background-color: transparent;
     color: white;
     border: 1px solid white;
@@ -27,7 +30,7 @@
       font-weight: 700;
     }
   }
-  &.tertiary{
+  &--tertiary{
     background-color: white;
     color: #9E3A4B;
     border-radius: 100px;
@@ -35,10 +38,9 @@
       cursor: pointer;
     }
   }
-  &.profileButton {
+  &--profileButton {
     background-color: #1F1F1F;
     color: #FFF;
-    font-size: 16px;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;

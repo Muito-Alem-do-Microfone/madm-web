@@ -1,15 +1,8 @@
 import PropTypes from 'prop-types'
-import styles from './Button.module.scss'
-
-const variantStyles = {
-  primary: styles.primary,
-  secondary: styles.secondary,
-  tertiary: styles.tertiary,
-  profile: styles.profileButton
-};
+import './style.scss'
 
 export default function Button({ variant, text, onClick }) {
-  const buttonClassName = [styles.button, variantStyles[variant]].join(' ');
+  const buttonClassName = `button button--${variant}`
 
   return (
     <button onClick={() => onClick()} className={buttonClassName}>
