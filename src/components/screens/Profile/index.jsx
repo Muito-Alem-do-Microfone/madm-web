@@ -3,9 +3,9 @@ import Header from '../../organisms/Header'
 
 import coverImg from '../../../assets/cover-img.png'
 import profileImg from '../../../assets/profile-img.png'
-import spotifyLogo from '../../../assets/spotify-logo.png'
-import instagramLogo from '../../../assets/instagram-logo.png'
-import twitterLogo from '../../../assets/twitter-logo.png'
+// import spotifyLogo from '../../../assets/spotify-logo.png'
+// import instagramLogo from '../../../assets/instagram-logo.png'
+// import twitterLogo from '../../../assets/twitter-logo.png'
 import badOmens from '../../../assets/bad-omens.png'
 
 import styles from './Profile.module.scss'

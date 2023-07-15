@@ -1,15 +1,20 @@
-import { Header, HeroSection, ExploreSection, AnnouncementsSection } from "../../organisms"
-import AboutSection from "../../organisms/AboutSection"
+import {
+  Header,
+  HeroSection,
+  ExploreSection,
+  AnnouncementsSection,
+  Footer
+} from "../../organisms"
 
 const Home = () => {
   return (
-      <div>
-        <Header />
-        <HeroSection />
-        <ExploreSection />
-        <AnnouncementsSection />
-        {/* <AboutSection /> */}
-      </div>
+    <div>
+      <Header />
+      <HeroSection />
+      <ExploreSection />
+      <AnnouncementsSection />
+      <Footer />
+    </div>
   )
 }
 
