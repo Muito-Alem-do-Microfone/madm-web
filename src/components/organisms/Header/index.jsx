@@ -1,13 +1,11 @@
 import logo from '../../../assets/madm-logo.png'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 import Button from '../../atoms/Button'
 import { useNavigate } from 'react-router-dom'
 
 import './style.scss'
-import { NavLink } from 'react-bootstrap';
 
 function Header() {
   const navigate = useNavigate()
