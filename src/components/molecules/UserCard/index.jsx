@@ -1,23 +1,38 @@
-import styles from "./userCard.module.scss";
-import profileImg from "../../../assets/profile-img.jpg";
-import Button from "../../atoms/Button";
+import { PropTypes } from 'prop-types'
 
-function UserCard() {
+import profileImg from "../../../assets/profile-img.jpg"
+import { Button } from "../../atoms"
+
+import "./style.scss"
+
+function UserCard({ name, instruments, city, state, genres}) {
+  const genresText = genres.reduce((text, genre) => text + ', ' + genre)
+
   return (
-    <div className={styles.userCard}>
-      <div className={styles.profileImage}>
-        <img className={styles.image} src={profileImg} alt="Foto do Perfil" />
+    <div className='userCard'>
+      <div className='userCard__imageWrapper'>
+        <img src={profileImg} alt="Foto do Perfil" />
       </div>
-      <div className={styles.profileContent}>
-        <h2>Erick Santos</h2>
-        <p className={styles.userInfo}>Guitarrista de São Paulo - SP </p>
-        <p className={styles.userInfo}>Curte trap e hardcore</p>
+      <div className='userCard__content'>
+        <p className='userCard__title'>{name}</p>
+        <p className='userCard__info'>{`${instruments}, ${city} - ${state}`}</p>
+        <p className='userCard__info'>
+          {genresText}
+        </p>
       </div>
-      <div className={styles.btnSection}>
+      <div className='userCard__footer'>
         <Button variant="primary" text="Conectar" />
       </div>
     </div>
-  );
+  )
 }
 
-export default UserCard;
+UserCard.propTypes = {
+  name: PropTypes.string,
+  instruments: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  genres: PropTypes.array,
+}
+
+export default UserCard

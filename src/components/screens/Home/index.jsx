@@ -1,5 +1,4 @@
-import { Header, HeroSection, ExploreSection } from "../../organisms"
-import UsersSection from "../../organisms/UsersSection"
+import { Header, HeroSection, ExploreSection, AnnouncementsSection } from "../../organisms"
 import AboutSection from "../../organisms/AboutSection"
 
 const Home = () => {
@@ -8,8 +7,8 @@ const Home = () => {
         <Header />
         <HeroSection />
         <ExploreSection />
-        {/* <UsersSection />
-        <AboutSection /> */}
+        <AnnouncementsSection />
+        {/* <AboutSection /> */}
       </div>
   )
 }

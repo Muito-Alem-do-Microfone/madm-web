@@ -5,4 +5,4 @@ export { default as HeroSection } from "./HeroSection";
 export { default as LoginSection } from "./LoginSection"
 export { default as MuralSection } from "./MuralSection"
 export { default as RegisterSection } from "./RegisterSection"
-export { default as UsersSection } from "./UsersSection"
+export { default as AnnouncementsSection } from "./AnnouncementsSection"
