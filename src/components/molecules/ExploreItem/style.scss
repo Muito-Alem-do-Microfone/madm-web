@@ -1,0 +1,26 @@
+@use '../../../../variables';
+
+.exploreItem {
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		img {
+			height: 50px;
+		}
+		h1 {
+			font-size: variables.$title;
+			margin: 0px;
+		}
+	}
+	&__content {
+		text-align: center;
+		font-size: variables.$regular-text;
+	}
+}

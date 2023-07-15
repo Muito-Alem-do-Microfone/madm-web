@@ -1,5 +1,5 @@
 import About from "./AboutSection";
-export { default as CardSection1 } from "./ExploreSection";
+export { default as ExploreSection } from "./ExploreSection";
 export { default as Header } from "./Header";
 export { default as HeroSection } from "./HeroSection";
 export { default as LoginSection } from "./LoginSection"
