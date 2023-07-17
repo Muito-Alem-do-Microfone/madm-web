@@ -1,14 +1,15 @@
-// import wallpaper from "../../../assets/wallpaper.jpg";
-import styles from './register.module.scss'
-import RegisterSection from "../../organisms/RegisterSection";
-
+// import wallpaper from "../../../assets/wallpaper.jpg"
+import RegisterSection from "../../organisms/RegisterSection"
+import AuthScreens from '../../template/AuthScreens'
 
 function Register() {
   return (
-      <div className={styles.wallpaper}>
+    <>
+      <AuthScreens>
         <RegisterSection />
-      </div>
-  );
+      </AuthScreens>
+    </>
+  )
 }
 
-export default Register;
+export default Register

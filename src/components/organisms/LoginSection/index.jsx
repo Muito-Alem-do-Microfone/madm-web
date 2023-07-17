@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from "../../atoms"
 
 import './style.scss'
+import TransparentInput from '../../atoms/TransparentInput'
 
 const LoginSection = () => {
   const [user, setUser] = useState('')
@@ -20,26 +21,18 @@ const LoginSection = () => {
     <div className='loginForm'>
       <h1 className='loginForm__title'>Login</h1>
       <div className='loginForm__form'>
-        <div className='loginForm__inputWrapper'>
-          <input
-            className='loginForm__input'
-            onChange={({ target }) => setUser(target.value)}
-            value={user}
-          />
-          <label className={`loginForm__label ${user ? 'loginForm__labelMoved' : '' }`}>E-mail/Usuário</label>
-        </div>
-
-        <div className='loginForm__inputWrapper'>
-          <input
-            className='loginForm__input'
-            onChange={({ target }) => setPassword(target.value)}
-            value={password}
-            type='password'
-          />
-          <label className={`loginForm__label ${password ? 'loginForm__labelMoved' : '' }`}>Senha</label>
-        </div>
+        <TransparentInput
+          label='E-mail/Usuário'
+          value={user}
+          handleChange={(value) => setUser(value)}
+        />
+        <TransparentInput
+          label='Senha'
+          value={password}
+          handleChange={(value) => setPassword(value)}
+          type='password'
+        />
       </div>
-
       <div className='loginForm__buttons'>
         <Button onClick={handleLogin} variant="primary" text="Entrar" />
         <Button variant="secondary" text="Entrar com Google" />

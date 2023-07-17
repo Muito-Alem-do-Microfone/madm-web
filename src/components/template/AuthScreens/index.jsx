@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Header } from "../../organisms"
 
 import './style.scss'
@@ -12,6 +13,10 @@ const AuthScreens = ({ children }) => {
       </div>
     </>
   )
+}
+
+AuthScreens.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
 export default AuthScreens
