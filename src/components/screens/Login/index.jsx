@@ -1,14 +1,14 @@
-// import wallpaper from "../../../assets/wallpaper.jpg";
-import styles from './login.module.scss'
-import LoginSection from "../../organisms/LoginSection";
-
+import { LoginSection } from "../../organisms/"
+import AuthScreens from "../../template/AuthScreens"
 
 function Login() {
   return (
-      <div className={styles.wallpaper}>
-        <LoginSection />
-      </div>
-  );
+    <>
+      <AuthScreens>
+        <LoginSection/>
+      </AuthScreens>
+    </>
+  )
 }
 
-export default Login;
+export default Login

@@ -1,0 +1,82 @@
+@use '../../../../variables';
+
+.loginForm {
+  $self: &;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 35%;
+  padding: 50px;
+  background-color: #1F1F1F;
+  &__title {
+    text-align: center;
+    font-size: variables.$big-title;
+    font-weight: 700;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  &__inputWrapper {
+    position: relative;
+    border-bottom: 1px solid #FFF;
+    #{ $self }__input {
+      height: 45px;
+      padding: 0px 10px;
+      border: none;
+      background-color: transparent;
+      color: #FFF;
+      width: 100%;
+      &:focus {
+        outline: none;
+        & + #{ $self }__label {
+          top: -20px;
+        }
+      }
+    }
+    #{ $self }__label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      transition: ease-in-out 0.3s;
+      &#{ $self }__labelMoved {
+        top: -20px;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .loginForm {
+    width: 60%;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .loginForm {
+    width: 100%;
+  }  
+}
+
+
+@media screen and (max-width: 320px) {
+  .loginForm {
+    &__links {
+      flex-direction: column;
+    }
+  }  
+}

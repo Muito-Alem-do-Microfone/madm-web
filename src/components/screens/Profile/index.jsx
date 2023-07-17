@@ -13,11 +13,10 @@ import Button from '../../atoms/Button'
 import { useSelector } from 'react-redux'
 
 const ProfileScreen = () => {
-  const token = useSelector(state => state.auth.token)
 
   return (
     <>
-      {!token && <Header />}
+      <Header />
       <div>
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>

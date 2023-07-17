@@ -2,24 +2,12 @@ import React, { useState } from "react";
 import logo from "../../../assets/madm-logo.png";
 import styles from './registerSection.module.scss';
 import Button from "../../atoms/Button";
-import { useDispatch } from "react-redux";
-import { registerUser } from "../../../state/reducers/auth/slice";
 
 const RegisterSection = () => {
   const [name, setName]         = useState('')
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
   const [passConf, setPassConf] = useState('')
-
-  const dispatch = useDispatch()
-
-  const handleCreateUser = () => {
-    dispatch(registerUser(
-      name,
-      email,
-      password
-    ))
-  }
 
   return (
     <>
