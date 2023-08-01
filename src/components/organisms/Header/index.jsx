@@ -13,11 +13,16 @@ function Header() {
   const handleLoginClick = () => {
     navigate('/login')
   }
+
+  const handleHomeClick = () => {
+    navigate('/home')
+  }
+
   
   return (
     <Navbar variant='dark' expand="lg" className="header">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand onClick={handleHomeClick}>
           <img src={logo} alt='logo' className="header__logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" data-bs-target="#basic-navbar-nav" />

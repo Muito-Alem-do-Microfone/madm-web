@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import logo from "../../../assets/madm-logo.png";
-import styles from './registerSection.module.scss';
-import Button from "../../atoms/Button";
-import { useDispatch } from "react-redux";
-import { registerUser } from "../../../state/reducers/auth/slice";
+import { useState } from "react"
+import Button from "../../atoms/Button"
+import TransparentInput from "../../atoms/TransparentInput"
+
+import './style.scss'
 
 const RegisterSection = () => {
   const [name, setName]         = useState('')
@@ -11,92 +10,52 @@ const RegisterSection = () => {
   const [password, setPassword] = useState('')
   const [passConf, setPassConf] = useState('')
 
-  const dispatch = useDispatch()
-
-  const handleCreateUser = () => {
-    dispatch(registerUser(
-      name,
-      email,
-      password
-    ))
-  }
-
   return (
-    <>
-      <section className={styles.login}>
-        <div className={styles.wrapper}>
-          <img src={logo} alt="logo" className={styles.logo} />
-          <h1 className={styles.login_title}>Registro</h1>
+    <div className='loginForm'>
+      <h1 className='loginForm__title'>Registro</h1>
+      <div className='loginForm__form'>
+        <TransparentInput
+          value={name}
+          handleChange={(value) => setName(value)}
+          type="text"
+          label="Nome"
+        />
 
-          <label className={styles.login_label}>
-            <input
-              value={name}
-              onChange={({target}) => setName(target.value)}
-              type="text"
-              name="name"
-              className={styles.input}
-              placeholder="Nome"
-            />
-          </label>
+        <TransparentInput
+          value={email}
+          handleChange={(value) => setEmail(value)}
+          type="email"
+          label="E-mail"
+        />
 
-          <label className={styles.login_label}>
-            <input
-              value={email}
-              onChange={({target}) => setEmail(target.value)}
-              type="email"
-              name="email"
-              className={styles.input}
-              placeholder="E-mail"
-            />
-          </label>
+        <TransparentInput
+          value={password}
+          handleChange={(value) => setPassword(value)}
+          type="password"
+          label="Senha"
+        />
 
-          <label className={styles.login_label}>
-            <input
-              value={password}
-              onChange={({target}) => setPassword(target.value)}
-              type="password"
-              name="password"
-              className={styles.input}
-              placeholder="Senha"
-            />
-          </label>
-
-          <label className={styles.login_label}>
-            <input
-              value={passConf}
-              onChange={({target}) => setPassConf(target.value)}
-              type="password"
-              name="password"
-              className={styles.input}
-              placeholder="Confirme sua senha"
-            />
-          </label>
-
-          <label className={styles.login_label_checkbox}>
-            <input type="checkbox" className={styles.input_checkbox} />
-            Manter login
-          </label>
-        </div>
-
-        <div className={styles.wrapper}>
-
-        <div className={styles.btnSection}>
-          <Button
-            onClick={handleCreateUser}
-            variant="primary"
-            text="Entrar"
-          />
-        </div>
-        <div className={styles.btnSection}>
-          <Button variant="secondary" text="Entrar com Google" />
-        </div>
-          <a href="/login" className={styles.login_link}>
-            Já tenho uma conta
-          </a>
-        </div>
-      </section>
-    </>
-  );
+        <TransparentInput
+          value={passConf}
+          handleChange={(value) => setPassConf(value)}
+          type="password"
+          label="Confirme sua senha"
+        />
+      </div>
+      <div className='loginForm__buttons'>
+        <Button
+          variant="primary"
+          text="Entrar"
+        />
+        <Button variant="secondary" text="Entrar com Google" />
+      </div>
+      <div className="loginForm__links">
+        <a href="/login" className='login_link'>
+          Já tenho uma conta
+        </a>
+      </div>
+    </div>
+  )
 }
   
-  export default RegisterSection;
+  export default RegisterSection
