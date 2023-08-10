@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: 35%;
+  width: 27%;
   padding: 50px;
   background-color: #1F1F1F;
   &__title {
@@ -56,6 +56,15 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
+
+    .login_link {
+      text-decoration: none;
+      color: #FFF;
+
+      &:hover {
+        color: #cfcfcf;
+      }
+    }
   }
 }
 
@@ -65,13 +74,11 @@
   }
 }
 
-
 @media screen and (max-width: 425px) {
   .loginForm {
     width: 100%;
   }  
 }
-
 
 @media screen and (max-width: 320px) {
   .loginForm {
@@ -80,3 +87,7 @@
     }
   }  
 }
+
+
+
+
