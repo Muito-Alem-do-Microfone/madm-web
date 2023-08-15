@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { redirect, useNavigate } from 'react-router-dom'
 import logo from '../../../assets/madm-logo.png'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -7,9 +7,11 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Button } from '../../atoms'
 
 import './style.scss'
+import { useAuth } from '../../../context/AuthContext'
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { authUser, logout } = useAuth()
   const navigate = useNavigate()
 
   const handleLoginClick = () => {
@@ -20,6 +22,9 @@ function Header() {
     navigate('/home')
   }
 
+  const handleLogout = async () => {
+    await logout()
+  }
   
   return (
     <Navbar variant='dark' expand="lg" className="header">
@@ -57,7 +62,10 @@ function Header() {
             </Nav.Link>
           </Nav>
           <div className="header__rightContainer">
-            <Button onClick={handleLoginClick} variant='primary' text='Fazer login' />
+            {authUser ?
+              <Button onClick={handleLogout} variant='primary' text='Fazer Logout' /> :
+              <Button onClick={handleLoginClick} variant='primary' text='Fazer login' />
+            }
           </div>
         </Navbar.Collapse>
       </Container>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { useNavigate } from 'react-router-dom'
+import { redirect, useNavigate } from 'react-router-dom'
 import { Button } from "../../atoms"
 
 import './style.scss'
@@ -8,14 +8,25 @@ import TransparentInput from '../../atoms/TransparentInput'
 import { useAuth } from '../../../context/AuthContext'
 
 const LoginSection = () => {
-  const [user, setUser] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  const { login } = useAuth();
+  const { authUser, login } = useAuth()
+
+  useEffect(() => {
+    if (authUser) {
+      navigate("/profile", { replace: true})
+    }
+  }, [authUser])
 
   const handleLogin = async () => {
-    await login(user, password);
+    try {
+      await login(email, password)
+      navigate("/profile", { replace: true })
+    } catch (error) {
+      console.error("Login failed:", error)
+    }
   }
 
   return (
@@ -24,8 +35,8 @@ const LoginSection = () => {
       <div className='loginForm__form'>
         <TransparentInput
           label='E-mail/Usuário'
-          value={user}
-          handleChange={(value) => setUser(value)}
+          value={email}
+          handleChange={(value) => setEmail(value)}
         />
         <TransparentInput
           label='Senha'

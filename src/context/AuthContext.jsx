@@ -5,51 +5,52 @@ import PropTypes from 'prop-types'
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [authUser, setAuthUser] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchUser()
-  }, []);
+  }, [])
 
   const fetchUser = async () => {
     const { data: { user } } = await supabase.auth.getUser()
-    setUser(user);
-    setLoading(false);
-  };
+    setAuthUser(user)
+    setLoading(false)
+  }
 
   const login = async (email, password) => {
-    const { user, error } = await supabase.auth.signInWithPassword({ email, password });
+    const { data: { user }, error } = await supabase.auth.signInWithPassword({ email, password })
+    console.log(user)
     if (error) {
-      console.error('Login error:', error.message);
+      console.error('Login error:', error.message)
     } else {
-      setUser(user);
+      setAuthUser(user)
     }
-  };
+  }
 
   const register = async (email, password) => {
-    const { user, error } = await supabase.auth.signUp({ email, password });
+    const { data: { user }, error } = await supabase.auth.signUp({ email, password })
     if (error) {
-      console.error('Registration error:', error.message);
+      console.error('Registration error:', error.message)
     } else {
-      setUser(user);
+      setAuthUser(user)
     }
-  };
+  }
 
   const logout = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-  };
+    await supabase.auth.signOut()
+    setAuthUser(null)
+  }
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
+    <AuthContext.Provider value={{ authUser, login, register, logout }}>
       {!loading && children}
     </AuthContext.Provider>
-  );
+  )
 }
 
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => useContext(AuthContext)

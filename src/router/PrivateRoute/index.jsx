@@ -3,13 +3,13 @@ import { useAuth } from "../../context/AuthContext";
 import { useEffect } from "react";
 
 export default function ProtectedRoutes() {
-  const { user } = useAuth();
-
+  const { authUser } = useAuth();
+console.log(authUser)
   useEffect(() => {
-    if (!user) {
-      redirect("/signin", { replace: true });
+    if (!authUser) {
+      redirect("/login", { replace: true });
     }
-  }, [user]);
+  }, [authUser]);
 
-  return user ? <Outlet /> : <Navigate to="/login" />;
+  return authUser ? <Outlet /> : <Navigate to="/login" />;
 }

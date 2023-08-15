@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <PrivateRoute isAuth={true} />,
+    element: <PrivateRoute />,
     // errorElement: <ErrorPage />,
     children: [
       {
@@ -44,10 +44,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-  // {
-  //   path: '/profile',
-  //   element: <PrivateRoute>{<ProfileScreen />}</PrivateRoute>,
-  // },
 ])
 
 export default router
