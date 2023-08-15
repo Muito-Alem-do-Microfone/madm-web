@@ -5,7 +5,7 @@ export default function Button({ variant, text, onClick }) {
   const buttonClassName = `button button--${variant}`
 
   return (
-    <button onClick={() => onClick()} className={buttonClassName}>
+    <button onClick={onClick} className={buttonClassName}>
       {text}
     </button>
   )

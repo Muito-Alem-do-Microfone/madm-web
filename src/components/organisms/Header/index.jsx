@@ -1,13 +1,15 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import logo from '../../../assets/madm-logo.png'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import Button from '../../atoms/Button'
-import { useNavigate } from 'react-router-dom'
+import { Button } from '../../atoms'
 
 import './style.scss'
 
 function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const navigate = useNavigate()
 
   const handleLoginClick = () => {
@@ -28,18 +30,31 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" data-bs-target="#basic-navbar-nav" />
         <Navbar.Collapse className='header__dropdown' id="basic-navbar-nav">
           <Nav className="header__menu m-auto">
+            {
+              isLoggedIn ? (
+              <Nav.Link
+                className="header__menuItem"
+                href="#home">Meu perfil
+              </Nav.Link>
+              ) : (
+              <Nav.Link
+                className="header__menuItem"
+                href="#home">Fazer cadastro
+              </Nav.Link>
+              )
+            }
             <Nav.Link
               className="header__menuItem"
-              href="#home">Fazer cadastro</Nav.Link>
+              href="#link">Encontrar músico
+            </Nav.Link>
             <Nav.Link
               className="header__menuItem"
-              href="#link">Encontrar músico</Nav.Link>
+              href="#link">Anunciar
+            </Nav.Link>
             <Nav.Link
               className="header__menuItem"
-              href="#link">Anunciar</Nav.Link>
-            <Nav.Link
-              className="header__menuItem"
-              href="#link">Mural de bandas</Nav.Link>
+              href="#link">Mural de bandas
+            </Nav.Link>
           </Nav>
           <div className="header__rightContainer">
             <Button onClick={handleLoginClick} variant='primary' text='Fazer login' />

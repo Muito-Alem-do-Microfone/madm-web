@@ -5,16 +5,17 @@ import { Button } from "../../atoms"
 
 import './style.scss'
 import TransparentInput from '../../atoms/TransparentInput'
+import { useAuth } from '../../../context/AuthContext'
 
 const LoginSection = () => {
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  console.log(user)
+  const { login } = useAuth();
 
-  const handleLogin = () => {
-    navigate('/profile')
+  const handleLogin = async () => {
+    await login(user, password);
   }
 
   return (
@@ -34,7 +35,7 @@ const LoginSection = () => {
         />
       </div>
       <div className='loginForm__buttons'>
-        <Button onClick={handleLogin} variant="primary" text="Entrar" />
+        <Button onClick={() => handleLogin()} variant="primary" text="Entrar" />
         <Button variant="secondary" text="Entrar com Google" />
       </div>
 
