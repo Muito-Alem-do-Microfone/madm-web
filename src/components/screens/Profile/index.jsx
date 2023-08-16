@@ -1,4 +1,4 @@
-import { Footer, Header } from '../../organisms'
+import { Footer, SideBar } from '../../organisms'
 import { Button } from '../../atoms'
 
 import { ReactComponent as SpotifyLogo } from '../../../assets/spotify.svg'
@@ -12,8 +12,8 @@ import './style.scss'
 const ProfileScreen = () => {
 
   return (
-    <>
-      <Header />
+    <div style={{ display: 'flex', flexDirection: 'row', height: '100vh'}}>
+      <SideBar />
       <div className='profile'>
         <div className='profile__leftContainer'>
           <img className='profile__image' src={profileImg} />
@@ -94,8 +94,7 @@ const ProfileScreen = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   )
 }
 
