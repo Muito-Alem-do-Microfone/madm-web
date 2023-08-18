@@ -1,141 +1,100 @@
-import React from 'react'
-import Header from '../../organisms/Header'
+import { Footer, SideBar } from '../../organisms'
+import { Button } from '../../atoms'
 
-import coverImg from '../../../assets/cover-img.png'
+import { ReactComponent as SpotifyLogo } from '../../../assets/spotify.svg'
+import { ReactComponent as InstagramLogo } from '../../../assets/instagram.svg'
+import { ReactComponent as TwitterLogo } from '../../../assets/twitter.svg'
+import { ReactComponent as FacebookLogo } from '../../../assets/facebook.svg'
 import profileImg from '../../../assets/profile-img.png'
-// import spotifyLogo from '../../../assets/spotify-logo.png'
-// import instagramLogo from '../../../assets/instagram-logo.png'
-// import twitterLogo from '../../../assets/twitter-logo.png'
-import badOmens from '../../../assets/bad-omens.png'
 
-import styles from './Profile.module.scss'
-import Button from '../../atoms/Button'
-import { useSelector } from 'react-redux'
+import './style.scss'
 
 const ProfileScreen = () => {
 
   return (
-    <>
-      <Header />
-      <div>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
-            <img src={coverImg} className={styles.coverImg}/>
-          </div>
+    <div style={{ display: 'flex', flexDirection: 'row', height: '100vh'}}>
+      <SideBar />
+      <div className='profile'>
+        <div className='profile__leftContainer'>
+          <img className='profile__image' src={profileImg} />
+          <Button variant={'profile'} text={'Compartilhar perfil'}/>
+          <Button variant={'profile'} text={'Denunciar Perfil'}/>
         </div>
-        <div className={styles.profileContainer}>
-          <div className={styles.leftContainer}>
-            <div className={styles.floatingContainer}>
-              <img className={styles.profileImg} src={profileImg} />
-              <div className={styles.statsWrapper}>
-                <span><strong>4000</strong>SEGUIDORES</span>
-                <span><strong>4000</strong>SEGUINDO</span>
+        <div className='profile__rightContainer'>
+          <div className='profile__section'>
+            <div className='profile__header'>
+              <span>Noé Sebastião</span>
+              <div className='profile__socials'>
+                <SpotifyLogo />
+                <InstagramLogo />
+                <TwitterLogo />
+                <FacebookLogo />
               </div>
-              <Button variant={'profile'} text={'Seguir'}/>
-              <Button variant={'profile'} text={'Compartilhar perfil'}/>
             </div>
+            <span className='profile__instruments'>Vocal, Guitarra, Baixo</span>
+            <span className='profile__location'>Rio de Janeiro, RJ, Brasil</span>
           </div>
-          <div className={styles.rightContainer}>
-            <div className={styles.firstContainer}>
-              <div className={styles.profileUpperWrapper}>
-                <span className={styles.profileName}>Noé Sebastião</span>
-                <div className={styles.profileSocialsWrapper}>
-                  <img src={spotifyLogo} className={styles.profileSocials}/>
-                  <img src={instagramLogo} className={styles.profileSocials}/>
-                  <img src={twitterLogo} className={styles.profileSocials}/>
-                </div>
-              </div>
-              <div>
-                <span className={styles.profileLocation}>Rio de Janeiro, RJ, Brasil</span>
-              </div>
-            </div>
-            <div className={styles.profileSection}> 
-              <span>Grupos</span>
-              {/*TODO: componentize this */}
-              <div className={styles.groupsContainer}>
-                <div className={styles.groupWrapper}>
-                  <img src={badOmens}/>
-                  <span>Bad Omens</span>
-                </div>
-                <div className={styles.groupWrapper}>
-                  <img src={badOmens}/>
-                  <span>Bad Omens</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.profileSection}> 
-              <span>Sobre</span>
-              <div className={styles.bioContainer}>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                </p>
-              </div>
-            </div>
-            <div className={styles.profileSection}> 
-              <span>Instrumentos</span>
-              {/*TODO: componentize this */}
-              <div className={styles.instrument}>
+          <div className='profile__section'> 
+            <span>Sobre</span>
+            <p className='profile__bio'>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+          </div>
+          <div className='profile__section'> 
+            <span>Anuncios abertos</span>
+            {/*TODO: componentize this */}
+            <div className='announcementContainer'>
+              <div className='announcement'>
                 <span>
-                  Vocal
+                  Procuro guitarrista solo
+                </span>
+              </div>
+              <div className='announcement'>
+                <span>
+                  Procuro guitarrista solo
+                </span>
+              </div>
+              <div className='announcement'>
+                <span>
+                  Procuro guitarrista solo
+                </span>
+              </div>
+              <div className='announcement'>
+                <span>
+                  Procuro guitarrista solo
+                </span>
+              </div>
+              <div className='announcement'>
+                <span>
+                  Procuro guitarrista solo
                 </span>
               </div>
             </div>
-            <div className={styles.profileSection}> 
-              <span>Anuncios abertos</span>
-              {/*TODO: componentize this */}
-              <div className={styles.announcementContainer}>
-                <div className={styles.announcement}>
-                  <span>
-                    Procuro guitarrista solo
-                  </span>
-                </div>
-                <div className={styles.announcement}>
-                  <span>
-                    Procuro guitarrista solo
-                  </span>
-                </div>
-                <div className={styles.announcement}>
-                  <span>
-                    Procuro guitarrista solo
-                  </span>
-                </div>
-                <div className={styles.announcement}>
-                  <span>
-                    Procuro guitarrista solo
-                  </span>
-                </div>
-                <div className={styles.announcement}>
-                  <span>
-                    Procuro guitarrista solo
-                  </span>
-                </div>
+          </div>
+          <div className='profile__section'> 
+            <span>Artistas preferidos</span>
+            {/*TODO: componentize this */}
+            <div className='announcementContainer'>
+              <div className='announcement'>
+                <span>
+                  Artista 1
+                </span>
               </div>
-            </div>
-            <div className={styles.profileSection}> 
-              <span>Artistas preferidos</span>
-              {/*TODO: componentize this */}
-              <div className={styles.announcementContainer}>
-                <div className={styles.announcement}>
-                  <span>
-                    Artista 1
-                  </span>
-                </div>
-                <div className={styles.announcement}>
-                  <span>
-                    Artista 2
-                  </span>
-                </div>
-                <div className={styles.announcement}>
-                  <span>
-                    Artista 3
-                  </span>
-                </div>
+              <div className='announcement'>
+                <span>
+                  Artista 2
+                </span>
+              </div>
+              <div className='announcement'>
+                <span>
+                  Artista 3
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
