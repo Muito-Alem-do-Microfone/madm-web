@@ -68,16 +68,16 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 427px) and (max-width: 768px) {
   .loginForm {
     width: 60%;
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .loginForm {
     width: 100%;
-  }  
+  }
 }
 
 @media screen and (max-width: 320px) {
