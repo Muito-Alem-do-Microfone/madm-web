@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { redirect, useNavigate } from 'react-router-dom'
 import { Button } from '../../atoms'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAnglesRight, faUser, faCog, faQuestionCircle, faMagnifyingGlass, faPlus, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faAnglesRight, faUser, faCog, faQuestionCircle, faMagnifyingGlass, faPlus, faRightFromBracket, faTableColumns } from '@fortawesome/free-solid-svg-icons'
 
 import { ReactComponent as LogoIcon } from '../../../assets/logo-icon.svg'
 import profileImg from '../../../assets/profile-img.png'
@@ -37,7 +37,7 @@ function SideBar() {
           </li>
           <li>
             <a href="#project" title="Project">
-              <FontAwesomeIcon icon={faAnglesRight} style={{color: "#FFF"}} />
+              <FontAwesomeIcon icon={faTableColumns} style={{color: "#FFF"}} />
               <span className="link hide">Meus Anúncios</span>
             </a>
           </li>

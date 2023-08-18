@@ -28,7 +28,7 @@ function Header() {
   
   return (
     <Navbar variant='dark' expand="lg" className="header">
-      <Container>
+      <Container fluid>
         <Navbar.Brand onClick={handleHomeClick}>
           <img src={logo} alt='logo' className="header__logo" />
         </Navbar.Brand>
