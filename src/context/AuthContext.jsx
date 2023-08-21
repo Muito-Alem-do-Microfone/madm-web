@@ -14,17 +14,29 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     const { data: { user } } = await supabase.auth.getUser()
-    setAuthUser(user)
+    let { data: profile, error } = await supabase
+      .rpc('get_user_profile', { profile_id: user.id })
+
+    setAuthUser(profile)
     setLoading(false)
   }
 
   const login = async (email, password) => {
-    const { data: { user }, error } = await supabase.auth.signInWithPassword({ email, password })
-    console.log(user)
-    if (error) {
-      console.error('Login error:', error.message)
-    } else {
-      setAuthUser(user)
+    try {
+      const { data: { user } } = await supabase.auth.signInWithPassword({ email, password })
+      
+      let { data: profile, error } = await supabase
+        .from('profiles')
+        .select("*")
+        .eq('id', user.id)
+
+      setAuthUser(profile)
+
+      if (error) {
+        throw error
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 

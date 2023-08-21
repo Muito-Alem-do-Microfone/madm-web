@@ -34,16 +34,20 @@ const router = createBrowserRouter([
     element: <SearchPage />,
   },
   {
-    path: "/",
-    element: <PrivateRoute />,
-    // errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "profile",
-        element: <ProfileScreen />,
-      },
-    ]
+    path: '/:username',
+    element: <ProfileScreen />,
   },
+  // {
+  //   path: "/",
+  //   element: <PrivateRoute />,
+  //   // errorElement: <ErrorPage />,
+  //   children: [
+  //     {
+  //       path: "profile",
+  //       element: <ProfileScreen />,
+  //     },
+  //   ]
+  // },
 ])
 
 export default router
