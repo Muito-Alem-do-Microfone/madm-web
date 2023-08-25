@@ -11,6 +11,7 @@ const LoginSection = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailMsg, setEmailMsg] = useState("")
+  const [passwordMsg, setPasswordMsg] = useState("")
 
   const navigate = useNavigate()
 
@@ -26,12 +27,17 @@ const LoginSection = () => {
     e.preventDefault()
 
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+    const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 
     if (!email) {
       setEmailMsg("Digite um e-mail")
     } else if (!regEx.test(email)) {
       setEmailMsg("Digite um e-mail válido")
+    } else if (!password) {
+      setPasswordMsg("Digite uma senha")
+    } else if (!regExPassword.test(password)) {
+      setPasswordMsg("Senha não atende aos requisitos mínimos")
     } else {
       setEmailMsg("")
       try {
@@ -59,6 +65,7 @@ const LoginSection = () => {
           handleChange={(value) => setPassword(value)}
           type='password'
         />
+        {passwordMsg}
 
       </div>
       <div className='loginForm__buttons'>
