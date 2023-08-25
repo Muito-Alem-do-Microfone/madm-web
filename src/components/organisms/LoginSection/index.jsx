@@ -6,12 +6,13 @@ import { Button } from "../../atoms"
 import './style.scss'
 import TransparentInput from '../../atoms/TransparentInput'
 import { useAuth } from '../../../context/AuthContext'
+import { validateLogin } from '../../../utils/validation'
 
 const LoginSection = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [emailMsg, setEmailMsg] = useState("")
-  const [passwordMsg, setPasswordMsg] = useState("")
+  const [emailErr, setEmailErr] = useState("")
+  const [passwordErr, setPasswordErr] = useState("")
 
   const navigate = useNavigate()
 
@@ -24,28 +25,23 @@ const LoginSection = () => {
   }, [authUser])
 
   const handleLogin = async (e) => {
-    e.preventDefault()
 
-    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
-    const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    e.preventDefault();
 
-
-    if (!email) {
-      setEmailMsg("Digite um e-mail")
-    } else if (!regEx.test(email)) {
-      setEmailMsg("Digite um e-mail válido")
-    } else if (!password) {
-      setPasswordMsg("Digite uma senha")
-    } else if (!regExPassword.test(password)) {
-      setPasswordMsg("Senha não atende aos requisitos mínimos")
-    } else {
-      setEmailMsg("")
+    const errors = validateLogin(email, password)
+  
+    if (Object.keys(errors).length === 0) {
       try {
-        await login(email, password)
-        navigate("/profile", { replace: true })
+        setEmailErr("");
+        setPasswordErr("");
+        await login(email, password);
+        navigate("/profile", { replace: true });
       } catch (error) {
-        console.error("Login failed:", error)
+        console.error("Login failed:", error);
       }
+    } else {
+      setEmailErr(errors.email || "");
+      setPasswordErr(errors.password || "");
     }
     }
 
@@ -58,14 +54,17 @@ const LoginSection = () => {
           value={email} 
           handleChange={(value) => setEmail(value)}
         />
-        {emailMsg}
+        {emailErr}
+
         <TransparentInput
           label='Senha'
           value={password}
           handleChange={(value) => setPassword(value)}
           type='password'
         />
-        {passwordMsg}
+        <p>*Senha deve conter no mínimo 8 dígitos</p>
+        <p>*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
+        {passwordErr}
 
       </div>
       <div className='loginForm__buttons'>
