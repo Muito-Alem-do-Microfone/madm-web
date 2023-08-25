@@ -10,6 +10,8 @@ import { useAuth } from '../../../context/AuthContext'
 const LoginSection = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [emailMsg, setEmailMsg] = useState("")
+
   const navigate = useNavigate()
 
   const { authUser, login } = useAuth()
@@ -20,14 +22,26 @@ const LoginSection = () => {
     }
   }, [authUser])
 
-  const handleLogin = async () => {
-    try {
-      await login(email, password)
-      navigate("/profile", { replace: true })
-    } catch (error) {
-      console.error("Login failed:", error)
+  const handleLogin = async (e) => {
+    e.preventDefault()
+
+    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+
+
+    if (!email) {
+      setEmailMsg("Digite um e-mail")
+    } else if (!regEx.test(email)) {
+      setEmailMsg("Digite um e-mail válido")
+    } else {
+      setEmailMsg("")
+      try {
+        await login(email, password)
+        navigate("/profile", { replace: true })
+      } catch (error) {
+        console.error("Login failed:", error)
+      }
     }
-  }
+    }
 
   return (
     <div className='loginForm'>
@@ -35,18 +49,20 @@ const LoginSection = () => {
       <div className='loginForm__form'>
         <TransparentInput
           label='E-mail/Usuário'
-          value={email}
+          value={email} 
           handleChange={(value) => setEmail(value)}
         />
+        {emailMsg}
         <TransparentInput
           label='Senha'
           value={password}
           handleChange={(value) => setPassword(value)}
           type='password'
         />
+
       </div>
       <div className='loginForm__buttons'>
-        <Button onClick={() => handleLogin()} variant="primary" text="Entrar" />
+        <Button onClick={handleLogin} variant="primary" text="Entrar" />
         <Button variant="secondary" text="Entrar com Google" />
       </div>
 
