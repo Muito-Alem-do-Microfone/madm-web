@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button } from "../../atoms"
 
 import './style.scss'

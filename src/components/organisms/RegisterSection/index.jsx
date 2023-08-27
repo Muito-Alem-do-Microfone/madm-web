@@ -1,14 +1,53 @@
 import { useState } from "react"
 import Button from "../../atoms/Button"
 import TransparentInput from "../../atoms/TransparentInput"
+import { validateRegister } from "../../../utils/validation"
 
 import './style.scss'
 
-const RegisterSection = ({ handleSubmit }) => {
+import { useAuth } from "../../../context/AuthContext"
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+
+const RegisterSection = () => {
   const [name, setName]         = useState('')
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
   const [passConf, setPassConf] = useState('')
+  const [nameErr, setNameErr] = useState("")
+  const [emailErr, setEmailErr] = useState("")
+  const [passwordErr, setPasswordErr] = useState("")
+
+  const { authUser, register } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (authUser) {
+      navigate("/profile", { replace: true})
+    }
+  }, [authUser])
+
+  const handleRegister = async (e, email, password) => {
+    e.preventDefault();
+
+    const errors = validateRegister(email, password)
+
+    if (Object.keys(errors).length === 0) {
+    try {
+      setEmailErr("");
+      setPasswordErr("");
+      setNameErr("");
+      await register(email, password);
+      navigate("/profile", { replace: true })
+    } catch (error) {
+      console.error("Login failed:", error)
+    }
+  } else {
+    setNameErr(errors.name || "")
+    setEmailErr(errors.email || "");
+    setPasswordErr(errors.password || "");
+  }
+}
 
   return (
     <div className='loginForm'>
@@ -20,6 +59,7 @@ const RegisterSection = ({ handleSubmit }) => {
           type="text"
           label="Nome"
         />
+        {nameErr}
 
         <TransparentInput
           value={email}
@@ -27,6 +67,7 @@ const RegisterSection = ({ handleSubmit }) => {
           type="email"
           label="E-mail"
         />
+        {emailErr}
 
         <TransparentInput
           value={password}
@@ -34,7 +75,7 @@ const RegisterSection = ({ handleSubmit }) => {
           type="password"
           label="Senha"
         />
-
+        {passwordErr}
         <TransparentInput
           value={passConf}
           handleChange={(value) => setPassConf(value)}
@@ -46,7 +87,7 @@ const RegisterSection = ({ handleSubmit }) => {
         <Button
           variant="primary"
           text="Entrar"
-          onClick={() => handleSubmit(name, email, password)}
+          onClick={handleRegister}
         />
         <Button variant="secondary" text="Entrar com Google" />
       </div>
@@ -58,5 +99,6 @@ const RegisterSection = ({ handleSubmit }) => {
     </div>
   )
 }
+
   
   export default RegisterSection
