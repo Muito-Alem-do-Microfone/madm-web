@@ -14,6 +14,7 @@ const RegisterSection = () => {
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
   const [passConf, setPassConf] = useState('')
+  const [passConfErr, setPassConfErr] = useState("")
   const [nameErr, setNameErr] = useState("")
   const [emailErr, setEmailErr] = useState("")
   const [passwordErr, setPasswordErr] = useState("")
@@ -27,16 +28,18 @@ const RegisterSection = () => {
     }
   }, [authUser])
 
-  const handleRegister = async (e, email, password) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
-    const errors = validateRegister(email, password)
+    const errors = validateRegister(name, email, password, passConf)
+  
 
     if (Object.keys(errors).length === 0) {
     try {
       setEmailErr("");
       setPasswordErr("");
       setNameErr("");
+      setPassConfErr("")
       await register(email, password);
       navigate("/profile", { replace: true })
     } catch (error) {
@@ -46,18 +49,20 @@ const RegisterSection = () => {
     setNameErr(errors.name || "")
     setEmailErr(errors.email || "");
     setPasswordErr(errors.password || "");
+    setPassConfErr(errors.passConf || "");
   }
 }
 
   return (
     <div className='loginForm'>
       <h1 className='loginForm__title'>Registro</h1>
-      <div className='loginForm__form'>
+      <form className='loginForm__form'>
         <TransparentInput
           value={name}
           handleChange={(value) => setName(value)}
           type="text"
           label="Nome"
+
         />
         {nameErr}
 
@@ -75,6 +80,8 @@ const RegisterSection = () => {
           type="password"
           label="Senha"
         />
+        <p>*Senha deve conter no mínimo 8 dígitos</p>
+        <p>*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
         {passwordErr}
         <TransparentInput
           value={passConf}
@@ -82,7 +89,8 @@ const RegisterSection = () => {
           type="password"
           label="Confirme sua senha"
         />
-      </div>
+        {passConfErr}
+      </form>
       <div className='loginForm__buttons'>
         <Button
           variant="primary"

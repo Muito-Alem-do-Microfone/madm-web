@@ -48,7 +48,7 @@ const LoginSection = () => {
   return (
     <div className='loginForm'>
       <h1 className='loginForm__title'>Login</h1>
-      <div className='loginForm__form'>
+      <form className='loginForm__form'>
         <TransparentInput
           label='E-mail/Usuário'
           value={email} 
@@ -62,11 +62,9 @@ const LoginSection = () => {
           handleChange={(value) => setPassword(value)}
           type='password'
         />
-        <p>*Senha deve conter no mínimo 8 dígitos</p>
-        <p>*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
         {passwordErr}
 
-      </div>
+      </form>
       <div className='loginForm__buttons'>
         <Button onClick={handleLogin} variant="primary" text="Entrar" />
         <Button variant="secondary" text="Entrar com Google" />

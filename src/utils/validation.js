@@ -1,6 +1,5 @@
 export const validateLogin = (email, password) => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/;
-    const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   
     const errors = {};
   
@@ -12,13 +11,13 @@ export const validateLogin = (email, password) => {
   
     if (!password) {
       errors.password = "Digite uma senha";
-    } else if (!regExPassword.test(password)) {
-      errors.password = "Senha não atende aos requisitos mínimos";
     }
+
+    return errors
 }
 
 
-export const validateRegister = (name, email, password) => {
+export const validateRegister = (name, email, password, passConf) => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/;
     const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   
@@ -38,6 +37,10 @@ export const validateRegister = (name, email, password) => {
       errors.password = "Digite uma senha";
     } else if (!regExPassword.test(password)) {
       errors.password = "Senha não atende aos requisitos mínimos";
+    }
+
+    if (password !== passConf) {
+      errors.passConf = "As senhas não coincidem";
     }
 
     return errors
