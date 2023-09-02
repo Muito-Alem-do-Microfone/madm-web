@@ -57,39 +57,51 @@ const RegisterSection = () => {
     <div className='loginForm'>
       <h1 className='loginForm__title'>Registro</h1>
       <form className='loginForm__form'>
+        <div className={`loginForm__inputWrapper ${nameErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={name}
           handleChange={(value) => setName(value)}
           type="text"
           label="Nome"
-
         />
-        {nameErr}
+        <p className="loginForm__error">{nameErr}</p>
+        {nameErr && <div className="error-divider"></div>}
+        </div>
 
+        <div className={`loginForm__inputWrapper ${emailErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={email}
           handleChange={(value) => setEmail(value)}
           type="email"
           label="E-mail"
         />
-        {emailErr}
+        <p className="loginForm__error">{emailErr}</p>
+        {emailErr && <div className="error-divider"></div>}
+        </div>
 
+        <div className={`loginForm__inputWrapper ${passwordErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={password}
           handleChange={(value) => setPassword(value)}
           type="password"
           label="Senha"
         />
-        <p>*Senha deve conter no mínimo 8 dígitos</p>
-        <p>*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
-        {passwordErr}
+        <p className="loginForm__ads">*Senha deve conter no mínimo 8 dígitos</p>
+        <p className="loginForm__ads">*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
+        <p className="loginForm__error">{passwordErr}</p>
+        {passwordErr && <div className="error-divider"></div>}
+        </div>
+
+        <div className={`loginForm__inputWrapper ${passConfErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={passConf}
           handleChange={(value) => setPassConf(value)}
           type="password"
           label="Confirme sua senha"
         />
-        {passConfErr}
+        <p className="loginForm__error">{passConfErr}</p>
+        {passConfErr && <div className="error-divider"></div>}
+        </div>
       </form>
       <div className='loginForm__buttons'>
         <Button
