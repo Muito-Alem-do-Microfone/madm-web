@@ -54,56 +54,56 @@ const RegisterSection = () => {
 }
 
   return (
-    <div className='loginForm'>
-      <h1 className='loginForm__title'>Registro</h1>
-      <form className='loginForm__form'>
-        <div className={`loginForm__inputWrapper ${nameErr ? 'has-error' : ''}`}>
+    <div className='registerForm'>
+      <h1 className='registerForm__title'>Registro</h1>
+      <form className='registerForm__form'>
+        <div className={`registerForm__inputWrapper ${nameErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={name}
           handleChange={(value) => setName(value)}
           type="text"
-          label="Nome"
+          label="Nome:"
         />
-        <p className="loginForm__error">{nameErr}</p>
+        <p className="registerForm__error">{nameErr}</p>
         {nameErr && <div className="error-divider"></div>}
         </div>
 
-        <div className={`loginForm__inputWrapper ${emailErr ? 'has-error' : ''}`}>
+        <div className={`registerForm__inputWrapper ${emailErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={email}
           handleChange={(value) => setEmail(value)}
           type="email"
-          label="E-mail"
+          label="E-mail:"
         />
-        <p className="loginForm__error">{emailErr}</p>
+        <p className="registerForm__error">{emailErr}</p>
         {emailErr && <div className="error-divider"></div>}
         </div>
 
-        <div className={`loginForm__inputWrapper ${passwordErr ? 'has-error' : ''}`}>
+        <div className={`registerForm__inputWrapper ${passwordErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={password}
           handleChange={(value) => setPassword(value)}
           type="password"
-          label="Senha"
+          label="Senha: *"
         />
-        <p className="loginForm__ads">*Senha deve conter no mínimo 8 dígitos</p>
-        <p className="loginForm__ads">*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
-        <p className="loginForm__error">{passwordErr}</p>
+        <p className="registerForm__error">{passwordErr}</p>
         {passwordErr && <div className="error-divider"></div>}
         </div>
 
-        <div className={`loginForm__inputWrapper ${passConfErr ? 'has-error' : ''}`}>
+        <div className={`registerForm__inputWrapper ${passConfErr ? 'has-error' : ''}`}>
         <TransparentInput
           value={passConf}
           handleChange={(value) => setPassConf(value)}
           type="password"
-          label="Confirme sua senha"
+          label="Confirme sua senha:"
         />
-        <p className="loginForm__error">{passConfErr}</p>
+        <p className="registerForm__error">{passConfErr}</p>
         {passConfErr && <div className="error-divider"></div>}
         </div>
+        <p className="registerForm__ads">*Senha deve conter no mínimo 8 dígitos</p>
+        <p className="registerForm__ads">*Senha deve conter: Um número, uma letra maiúscula, uma minúscula e um caractere especial </p>
       </form>
-      <div className='loginForm__buttons'>
+      <div className='registerForm__buttons'>
         <Button
           variant="primary"
           text="Entrar"
@@ -111,7 +111,7 @@ const RegisterSection = () => {
         />
         <Button variant="secondary" text="Entrar com Google" />
       </div>
-      <div className="loginForm__links">
+      <div className="registerForm__links">
         <a href="/login" className='login_link'>
           Já tenho uma conta
         </a>

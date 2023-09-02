@@ -1,12 +1,13 @@
 @use '../../../../variables';
 
-.loginForm {
+.registerForm {
   $self: &;
   color: #FFF;
   display: flex;
   flex-direction: column;
   gap: 50px;
   width: 35%;
+  height: 100%;
   padding: 50px;
   background-color: #1F1F1F;
   &__title {
@@ -27,7 +28,7 @@
       padding: 0px 10px;
       border: none;
       background-color: transparent;
-      border-bottom: 1px solid #FFF;
+          border-bottom: 1px solid #FFF;
       color: #FFF;
       width: 100%;
       &:focus {
@@ -71,7 +72,7 @@
   }
 }
 
-.loginForm__inputWrapper.has-error .loginForm__error {
+.registerForm__inputWrapper.has-error .registerForm__error {
   display: block;
 }
 
@@ -81,21 +82,21 @@
 }
 
 @media screen and (max-width: 768px) {
-  .loginForm {
+  .registerForm {
     width: 60%;
   }
 }
 
 
 @media screen and (max-width: 425px) {
-  .loginForm {
+  .registerForm {
     width: 100%;
   }  
 }
 
 
 @media screen and (max-width: 320px) {
-  .loginForm {
+  .registerForm {
     &__links {
       flex-direction: column;
     }
