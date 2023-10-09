@@ -4,10 +4,11 @@
   $self: &;
   background-color: #1F1F1F;
   color: white;
-  .container {
-    display: flex;
+  &__container {
     align-items: center;
-    justify-content: space-between;
+    padding: 10px 0;
+    max-width: 1800px;
+    width: 80%;
   }
   &__logo {
     height: 35px;

@@ -34,10 +34,13 @@
     #{ $self }__title {
       font-size: variables.$title;
       font-weight: 600;
+      white-space: nowrap;
     }
     #{ $self }__info {
       font-size: variables.$regular-text;
       text-align: center;
+      white-space: nowrap;
     }
   }
 }
+
