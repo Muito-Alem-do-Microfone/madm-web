@@ -13,6 +13,12 @@ import { Nav } from 'react-bootstrap'
 
 function SideBar() {
   const [collapse, setCollapse] = useState(true)
+  const { logout } = useAuth()
+
+  const handleLogout = async () => {
+    console.log('uahsuahsa')
+    await logout()
+  }
 
   return (
     <div className={`sideBar ${collapse && 'sideBar--collapse'}`}>
@@ -71,7 +77,7 @@ function SideBar() {
               </a>
             </li>
             <li>
-              <a href="#project" title="Project">
+              <a onClick={handleLogout} title="Project">
                 <FontAwesomeIcon icon={faRightFromBracket} style={{color: "#FFF"}} />
                 <span className="link hide">Sair</span>
               </a>
