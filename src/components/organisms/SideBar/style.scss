@@ -1,0 +1,134 @@
+.sideBar {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  flex-direction: column;
+  padding: 20px 12px;
+  background-color: #1F1F1F;
+  color: #fff;
+  width: 15rem;
+  transition: width 0.5s linear;
+  &__collapseBtn {
+    top: 16px;
+    right: -62px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: #6067EB50 0px 2px 8px 0px;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+    }
+  }
+  &__links {
+    border-top: 1px solid #2C2C2C;
+    ul {
+      list-style-type: none;
+      position: relative;
+      margin: 0px;
+      padding: 0px;
+    }
+    li a {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 12px 10px;
+      color: #FFF;
+      font-size: 1.25rem;
+      height: 56px;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  &__bottom {
+    padding: 8px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: auto;
+  }
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-direction: row;
+    padding: 24px 2px;
+    border-top: 1px solid var(--sidebar-gray-background);
+  }
+  &__avatarWrapper {
+    position: relative;
+    display: flex;
+    .avatar {
+      display: block;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: drop-shadow(
+        -20px 0 10px rgba(0, 0, 0, 0.1)
+      );
+      &:hover {
+        transform: scale(1.05);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+  &__usernameWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    .username {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: left;
+    }
+    
+  }
+  &.sideBar--collapse {
+    width: 80px;
+    .sideBar__collapseBtn {
+      transform: rotate(-180deg);
+    }
+    .hide {
+      position: absolute;
+      display: none;
+      pointer-events: none;
+    }
+    .sideBar__links {
+      li a {
+        justify-content: center !important;
+      }
+    }
+  }
+}
+
+
+.sideBar__links li a:hover, 
+.sideBar__links li a:focus, 
+.sideBar__links .active {
+  width: 100%;
+  text-decoration: none;
+  background-color: #FFF;
+  outline: none;
+  color: #1F1F1F;
+}
+

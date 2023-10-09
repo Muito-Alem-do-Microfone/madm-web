@@ -4,7 +4,7 @@ import TransparentInput from "../../atoms/TransparentInput"
 
 import './style.scss'
 
-const RegisterSection = () => {
+const RegisterSection = ({ handleSubmit }) => {
   const [name, setName]         = useState('')
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
@@ -46,6 +46,7 @@ const RegisterSection = () => {
         <Button
           variant="primary"
           text="Entrar"
+          onClick={() => handleSubmit(name, email, password)}
         />
         <Button variant="secondary" text="Entrar com Google" />
       </div>
